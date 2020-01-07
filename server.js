@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const isAuthenticated = require("./middleware/isAuthenticated");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -9,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-mongoose.connect("mongodb://localhost/authExample", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/walkn", { useNewUrlParser: true });
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
