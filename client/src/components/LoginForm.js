@@ -4,6 +4,8 @@ import UserContext from "../context/UserContext";
 import Auth from "../utils/Auth";
 
 class LoginForm extends Component {
+  static contextType = UserContext;
+
   state = {
     username: "",
     password: ""
@@ -19,7 +21,7 @@ class LoginForm extends Component {
     const { username, password } = this.state;
     if (username && password) {
       Auth.logIn(username, password, response => {
-        //execute setUser from context
+        this.context.setUser(response);
         this.props.history.push("/");
       });
     }

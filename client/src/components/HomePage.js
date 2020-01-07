@@ -1,9 +1,16 @@
 import React from "react";
+import UserContext from "../context/UserContext";
 
 const HomePage = props => (
   <div>
-    <h1>Home Page (protected)</h1>
-    <h2>Welcome, {/*username*/}!</h2>
+    <UserContext.Consumer>
+      {value => (
+        <>
+          <h1>Home Page (protected)</h1>
+          <h2>Welcome, {value.user && value.user.username}!</h2>
+        </>
+      )}
+    </UserContext.Consumer>
   </div>
 );
 

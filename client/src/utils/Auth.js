@@ -27,7 +27,7 @@ function Auth() {
   }
 
   function isLoggedIn() {
-    return loggedIn;
+    return localStorage.getItem("token") ? true : false;
   }
 
   return {

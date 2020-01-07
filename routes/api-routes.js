@@ -62,8 +62,6 @@ module.exports = function(app) {
   });
 
   app.get("/api/me", isAuthenticated, function(req, res) {
-    User.findById(req.user._id).then(dbUser => {
-      res.json(dbUser);
-    });
+    res.json(req.user);
   });
 };
