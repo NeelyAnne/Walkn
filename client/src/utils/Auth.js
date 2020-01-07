@@ -4,7 +4,16 @@ function Auth() {
   let loggedIn = false;
 
   function logIn(username, password, cb) {
-    //CODE GOES HERE
+    axios
+      .post("/api/authenticate", {
+        username: username,
+        password: password
+      })
+      .then(res => {
+        loggedIn = true;
+        localStorage.setItem("token", res.data.token);
+        cb(res.data);
+      });
   }
 
   function logOut(cb) {
