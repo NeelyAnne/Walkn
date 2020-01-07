@@ -60,4 +60,10 @@ module.exports = function(app) {
       message: "This is just boring, public data."
     });
   });
+
+  app.get("/api/me", isAuthenticated, function(req, res) {
+    User.findById(req.user._id).then(dbUser => {
+      res.json(dbUser);
+    });
+  });
 };
