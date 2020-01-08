@@ -47,37 +47,39 @@ export class MapContainer extends Component {
       { lat: 33.99, lng: -84.23, name: "fajitas", type: "food", paws: "3" }
     ];
     return (
-      <Map
-        key={`${this.state.currentLat}-${this.state.currentLng}`}
-        google={this.props.google}
-        zoom={12}
-        style={mapStyles}
-        initialCenter={{
-          lat: this.state.currentLat,
-          lng: this.state.currentLng
-        }}
-      >
-        {markerPositions.map((pos, i) => (
-          <Marker
-            key={i}
-            position={{ lat: pos.lat, lng: pos.lng }}
-            onClick={(props, marker, e) =>
-              this.onMarkerClick(props, marker, e, pos)
-            }
-          />
-        ))}
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
+      <div>
+        <Map
+          key={`${this.state.currentLat}-${this.state.currentLng}`}
+          google={this.props.google}
+          zoom={12}
+          style={mapStyles}
+          initialCenter={{
+            lat: this.state.currentLat,
+            lng: this.state.currentLng
+          }}
         >
-          <div>
-            <h1>{this.state.infoWindowContent.name}</h1>
-            <h4>{this.state.infoWindowContent.type}</h4>
-            <h4>{"rating :" + this.state.infoWindowContent.paws + "/4"}</h4>
-          </div>
-        </InfoWindow>
-      </Map>
+          {markerPositions.map((pos, i) => (
+            <Marker
+              key={i}
+              position={{ lat: pos.lat, lng: pos.lng }}
+              onClick={(props, marker, e) =>
+                this.onMarkerClick(props, marker, e, pos)
+              }
+            />
+          ))}
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+            onClose={this.onClose}
+          >
+            <div>
+              <h1>{this.state.infoWindowContent.name}</h1>
+              <h4>{this.state.infoWindowContent.type}</h4>
+              <h4>{"rating :" + this.state.infoWindowContent.paws + "/4"}</h4>
+            </div>
+          </InfoWindow>
+        </Map>
+      </div>
     );
   }
 }

@@ -1,0 +1,10 @@
+.form,
+h1 {
+  text-align: center;
+  margin: 50px;
+  font-family: "Pacifico", cursive;
+}
+
+.formElement {
+  margin: 20px;
+}
