@@ -1,10 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
 import GoogleApiWrapper from "./Map";
 
-const Restaurant = props => (
-  <div>
-    <GoogleApiWrapper></GoogleApiWrapper>
-  </div>
-);
+class Restuarant extends Component {
+  render() {
+    return (
+      <div>
+        <GoogleApiWrapper></GoogleApiWrapper>
+      </div>
+    );
+  }
+}
 
-export default Restaurant;
+export default Restuarant;

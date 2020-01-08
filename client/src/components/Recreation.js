@@ -1,10 +1,14 @@
-import React from "react";
-import GoogleApiWrapper from "./Map"
+import React, { Component } from "react";
+import GoogleApiWrapper from "./Map";
 
-const Recreation = props => (
-  <div>
-    <GoogleApiWrapper></GoogleApiWrapper>
-  </div>
-);
+class Recreation extends Component {
+  render() {
+    return (
+      <div>
+        <GoogleApiWrapper></GoogleApiWrapper>
+      </div>
+    );
+  }
+}
 
 export default Recreation;
