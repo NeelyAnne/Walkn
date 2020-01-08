@@ -6,6 +6,11 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import LoginPage from "./components/LoginPage";
 import HomePage from "./components/HomePage";
 import UserContext from "./context/UserContext";
+import Restaurant from "./components/Restaurant";
+import All from "./components/All";
+import Entertainment from "./components/Entertainment";
+import Other from "./components/Other";
+import Recreation from "./components/Recreation";
 
 class App extends Component {
   state = {
@@ -49,6 +54,15 @@ class App extends Component {
             }}
           >
             <ProtectedRoute exact path="/" component={HomePage} />
+            <ProtectedRoute exact path="/All" component={All} />
+            <ProtectedRoute exact path="/Restaurant" component={Restaurant} />
+            <ProtectedRoute exact path="/Recreation" component={Recreation} />
+            <ProtectedRoute
+              exact
+              path="/Entertainment"
+              component={Entertainment}
+            />
+            <ProtectedRoute exact path="/Other" component={Other} />
             <Route exact path="/login" component={LoginPage} />
           </UserContext.Provider>
         </div>
