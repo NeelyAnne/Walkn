@@ -1,6 +1,5 @@
 import React from "react";
 import UserContext from "../context/UserContext";
-import Navbar from "./Navbar";
 
 const HomePage = props => (
   <>
