@@ -11,6 +11,7 @@ import All from "./components/All";
 import Entertainment from "./components/Entertainment";
 import Other from "./components/Other";
 import Recreation from "./components/Recreation";
+import "./components/css/index.css";
 
 class App extends Component {
   state = {
@@ -41,12 +42,6 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <header>
-            <nav>
-              <Link to="/">Home</Link> | <Link to="/login">Login</Link>
-            </nav>
-          </header>
-
           <UserContext.Provider
             value={{
               user: user,
