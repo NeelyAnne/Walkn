@@ -43,8 +43,8 @@ export class MapContainer extends Component {
 
   render() {
     const markerPositions = [
-      { lat: 33.89, lng: -84.23, name: "Tacos", type: "food", paws: "4" },
-      { lat: 33.99, lng: -84.23, name: "fajitas", type: "food", paws: "3" }
+      { lat: 33.89, lng: -84.23, name: "Tacos", category: "food", rating: "4" },
+      { lat: 33.99, lng: -84.23, name: "fajitas", category: "food", rating: "3" }
     ];
     return (
       <div>
@@ -74,8 +74,8 @@ export class MapContainer extends Component {
           >
             <div>
               <h1>{this.state.infoWindowContent.name}</h1>
-              <h4>{this.state.infoWindowContent.type}</h4>
-              <h4>{"rating :" + this.state.infoWindowContent.paws + "/4"}</h4>
+              <h4>{this.state.infoWindowContent.category}</h4>
+              <h4>{"rating :" + this.state.infoWindowContent.rating + "/4"}</h4>
             </div>
           </InfoWindow>
         </Map>
