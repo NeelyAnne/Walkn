@@ -1,6 +1,7 @@
 import React from "react";
 import UserContext from "../context/UserContext";
 import LogoutButton from "../components/LogoutButton";
+import Chart from "./Chart";
 
 const HomePage = props => (
   <>
@@ -63,7 +64,7 @@ const HomePage = props => (
                 <br />
               </div>
               <div className="jumbotron">
-                <h1>Sup</h1>
+                <Chart />
               </div>
             </div>
           </>
