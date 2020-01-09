@@ -2,7 +2,11 @@ import React from "react";
 import SignUpForm from "./SignUpForm";
 
 const SignUpPage = () => {
-  return <SignUpForm />;
+  return (
+    <div className="container box">
+      <SignUpForm />
+    </div>
+  );
 };
 
 export default SignUpPage;

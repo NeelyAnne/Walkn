@@ -20,6 +20,14 @@ let LocationSchema = mongoose.Schema({
   category: {
     type: String,
     required: "Please complete the field."
+  },
+  lat: {
+    type: Number,
+    required: "Please complete the field."
+  },
+  lng: {
+    type: Number,
+    required: "Please complete the field."
   }
 });
 module.exports = mongoose.model("Location", LocationSchema);

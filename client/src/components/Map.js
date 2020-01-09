@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
+import axios from "axios";
 
 const mapStyles = {
   width: "100%",
@@ -12,17 +13,25 @@ export class MapContainer extends Component {
     selectedPlace: {},
     infoWindowContent: {},
     currentLat: 34.9,
-    currentLng: -84.3233
+    currentLng: -84.3233,
+    locations: []
   };
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(position => {
-      this.setState({
-        currentLat: position.coords.latitude,
-        currentLng: position.coords.longitude
+      this.getLocations().then(locations => {
+        this.setState({
+          currentLat: position.coords.latitude,
+          currentLng: position.coords.longitude,
+          locations: locations
+        });
       });
     });
   }
+
+  getLocations = () => {
+    return axios.get("/api/locations").then(res => res.data);
+  };
 
   onMarkerClick = (props, marker, e, infoWindowContent) =>
     this.setState({
@@ -42,10 +51,6 @@ export class MapContainer extends Component {
   };
 
   render() {
-    const markerPositions = [
-      { lat: 33.89, lng: -84.23, name: "Tacos", type: "food", paws: "4" },
-      { lat: 33.99, lng: -84.23, name: "fajitas", type: "food", paws: "3" }
-    ];
     return (
       <div>
         <Map
@@ -58,7 +63,7 @@ export class MapContainer extends Component {
             lng: this.state.currentLng
           }}
         >
-          {markerPositions.map((pos, i) => (
+          {this.state.locations.map((pos, i) => (
             <Marker
               key={i}
               position={{ lat: pos.lat, lng: pos.lng }}
@@ -74,8 +79,14 @@ export class MapContainer extends Component {
           >
             <div>
               <h1>{this.state.infoWindowContent.name}</h1>
-              <h4>{this.state.infoWindowContent.type}</h4>
-              <h4>{"rating :" + this.state.infoWindowContent.paws + "/4"}</h4>
+              <h4>{"Address: " + this.state.infoWindowContent.address}</h4>
+              <h4>{"Category: " + this.state.infoWindowContent.category}</h4>
+              <h4>
+                {"Rating (1 to 4): " + this.state.infoWindowContent.rating}
+              </h4>
+              <h4>
+                {"Description: " + this.state.infoWindowContent.description}
+              </h4>
             </div>
           </InfoWindow>
         </Map>
