@@ -1,33 +1,46 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import UserContext from "../context/UserContext";
-import Auth from "../utils/Auth";
-import "./css/login.css";
 
 class SignUpForm extends Component {
   render() {
     return (
-      <div className="loginBody">
-        <h1 className="center"> Please Login to continue to Walkn!</h1>
+      <div className="signUpBody box">
+        <h1 className="center"> Please fill in the information below!</h1>
         <form className="center" onSubmit={this.submitHandler}>
           <input
             type="text"
-            name="username"
-            value={this.state.username}
-            onChange={this.changeHandler}
+            name="name"
             className="formElement"
-            placeholder="Username:"
+            placeholder="Name: "
           />
           <br />
           <input
-            type="password"
-            name="password"
-            value={this.state.password}
-            onChange={this.changeHandler}
+            type="text"
+            name="address"
             className="formElement"
-            placeholder="Password:"
+            placeholder="Address: "
           />
           <br />
+          <input
+            type="text"
+            name="description"
+            className="formElement"
+            placeholder="Description:"
+          />
+          <br />
+          <input
+            type="text"
+            name="lat"
+            className="formElement"
+            placeholder="Lat:"
+          />
+          <br />
+          <input
+            type="text"
+            name="long"
+            className="formElement"
+            placeholder="Long:"
+          />
           <button className="submit block">Submit</button>
         </form>
       </div>
