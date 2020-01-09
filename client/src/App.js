@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Auth from "./utils/Auth";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import LoginPage from "./components/LoginPage";
 import HomePage from "./components/HomePage";
@@ -12,6 +12,7 @@ import Entertainment from "./components/Entertainment";
 import Other from "./components/Other";
 import Recreation from "./components/Recreation";
 import "./components/css/index.css";
+import SignUpPage from "./components/SignUpPage";
 
 class App extends Component {
   state = {
@@ -49,16 +50,17 @@ class App extends Component {
             }}
           >
             <ProtectedRoute exact path="/" component={HomePage} />
-            <ProtectedRoute exact path="/All" component={All} />
-            <ProtectedRoute exact path="/Restaurant" component={Restaurant} />
-            <ProtectedRoute exact path="/Recreation" component={Recreation} />
+            <ProtectedRoute exact path="/all" component={All} />
+            <ProtectedRoute exact path="/restaurant" component={Restaurant} />
+            <ProtectedRoute exact path="/recreation" component={Recreation} />
             <ProtectedRoute
               exact
-              path="/Entertainment"
+              path="/entertainment"
               component={Entertainment}
             />
-            <ProtectedRoute exact path="/Other" component={Other} />
+            <ProtectedRoute exact path="/other" component={Other} />
             <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/signup" component={SignUpPage} />
           </UserContext.Provider>
         </div>
       </Router>

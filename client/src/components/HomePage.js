@@ -1,5 +1,6 @@
 import React from "react";
 import UserContext from "../context/UserContext";
+import LogoutButton from "../components/LogoutButton";
 
 const HomePage = props => (
   <>
@@ -9,9 +10,7 @@ const HomePage = props => (
           <>
             <div>
               <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand titleBar" href="#">
-                  Walkn
-                </a>
+                <a className="navbar-brand titleBar">Walkn</a>
                 <button
                   className="navbar-toggler"
                   type="button"
@@ -26,17 +25,46 @@ const HomePage = props => (
                 <div className="collapse navbar-collapse" id="navbarText">
                   <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                      <a className="nav-link" href="#">
+                      <a className="nav-link">
                         Atlanta's guide to a pet friendly lifestyle.
                         <span className="sr-only">(current)</span>
                       </a>
                     </li>
                   </ul>
-                  <span className="navbar-text">
-                    Welcome, {value.user && value.user.username}!
-                  </span>
+                  <div className="navbar-text">
+                    {"---"}
+                    Welcome, {value.user && value.user.username}!{"---"}
+                    <LogoutButton></LogoutButton>
+                  </div>
                 </div>
               </nav>
+              <div className="blank">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+              </div>
+              <div className="jumbotron">
+                <h1>Sup</h1>
+              </div>
             </div>
           </>
         )}

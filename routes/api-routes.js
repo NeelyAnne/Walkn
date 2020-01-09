@@ -18,18 +18,10 @@ module.exports = function(app) {
       });
   });
 
-  app.post("api/addLocation", function(req, res) {
-    Location.create(req.body)
-      .then(function() {
-        res.json({ message: "Location created." });
-      })
-      .catch(function(err) {
-        let status = 500;
-        if (err.message.match(/duplicate key error/)) {
-          status = 400;
-        }
-        res.status(status).json({ message: err.message });
-      });
+  app.post("/api/addLocation", function(req, res) {
+    Location.create(req.body).then(function() {
+      res.json({ message: "Location created." });
+    });
   });
 
   app.post("/api/authenticate", function(req, res) {

@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import "./css/navbar.css";
+import { BrowserRouter as Link } from "react-router-dom";
 
 class Navbar extends Component {
   render() {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand titleBar" href="#">
-            Walkn
-          </a>
+          <Link to="/">
+            <a className="navbar-brand titleBar">Walkn</a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -23,15 +24,13 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="#">
+                <a className="nav-link">
                   Atlanta's guide to a pet friendly lifestyle.
                   <span className="sr-only">(current)</span>
                 </a>
               </li>
             </ul>
-            <span className="navbar-text">
-              Navbar text with an inline element
-            </span>
+            <span className="navbar-text">Return home to log out!</span>
           </div>
         </nav>
       </div>
