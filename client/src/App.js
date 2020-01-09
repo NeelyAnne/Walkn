@@ -13,6 +13,7 @@ import Other from "./components/Other";
 import Recreation from "./components/Recreation";
 import "./components/css/index.css";
 import SignUpPage from "./components/SignUpPage";
+import Chart from './components/Chart'
 
 class App extends Component {
   state = {
@@ -63,6 +64,7 @@ class App extends Component {
             <Route exact path="/signup" component={SignUpPage} />
           </UserContext.Provider>
         </div>
+        <Chart/>
       </Router>
     );
   }
