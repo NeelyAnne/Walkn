@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Auth from "./utils/Auth";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import LoginPage from "./components/LoginPage";
 import HomePage from "./components/HomePage";

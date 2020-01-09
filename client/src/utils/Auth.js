@@ -16,10 +16,10 @@ function Auth() {
       });
   }
 
-  function logOut(cb) {
+  function logOut() {
     localStorage.removeItem("token");
     loggedIn = false;
-    cb();
+    window.location.reload(false);
   }
 
   function getToken() {

@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import Auth from "../utils/Auth";
-import "./css/login.css";
-import { BrowserRouter as Link } from "react-router-dom";
+import "./css/signUp.css";
 
 class LoginForm extends Component {
   static contextType = UserContext;
@@ -32,15 +31,15 @@ class LoginForm extends Component {
   render() {
     return (
       <div className="loginBody">
-        <h1 className="center"> Please Login to continue to Walkn!</h1>
-        <form className="center" onSubmit={this.submitHandler}>
+        <h1> Please Login to continue to Walkn!</h1>
+        <form className="form" onSubmit={this.submitHandler}>
           <input
             type="text"
             name="username"
             value={this.state.username}
             onChange={this.changeHandler}
             className="formElement"
-            placeholder="Username:"
+            placeholder="Username"
           />
           <br />
           <input
@@ -49,17 +48,13 @@ class LoginForm extends Component {
             value={this.state.password}
             onChange={this.changeHandler}
             className="formElement"
-            placeholder="Password:"
+            placeholder="Password"
           />
           <br />
-          <button className="submit block">Submit</button>
+          <button type="submit" className="submit">
+            Submit
+          </button>
         </form>
-        <h1 className="center white">Not a member?</h1>
-        <div className="center">
-          <Link to="/">
-            <button className="center block">Sign Up here!</button>
-          </Link>
-        </div>
       </div>
     );
   }
