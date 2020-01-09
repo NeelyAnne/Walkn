@@ -56,7 +56,7 @@ class LoginForm extends Component {
         </form>
         <h1 className="center white">Not a member?</h1>
         <div className="center">
-          <Link to="/">
+          <Link to="/signup">
             <button className="center block">Sign Up here!</button>
           </Link>
         </div>

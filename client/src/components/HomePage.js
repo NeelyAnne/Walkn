@@ -38,6 +38,33 @@ const HomePage = props => (
                   </div>
                 </div>
               </nav>
+              <div className="blank">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+              </div>
+              <div className="jumbotron">
+                <h1>Sup</h1>
+              </div>
             </div>
           </>
         )}
