@@ -71,4 +71,14 @@ module.exports = function(app) {
   app.get("/api/me", isAuthenticated, function(req, res) {
     res.json(req.user);
   });
+
+  app.get("/api/locations", function(req, res) {
+    Location.find({})
+      .then(function(dbLocation) {
+        res.json(dbLocation);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
 };
