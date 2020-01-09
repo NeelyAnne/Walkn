@@ -13,7 +13,7 @@ import Other from "./components/Other";
 import Recreation from "./components/Recreation";
 import "./components/css/index.css";
 import SignUpPage from "./components/SignUpPage";
-import Chart from './components/Chart'
+import AddLocation from "./components/AddLocation";
 
 class App extends Component {
   state = {
@@ -60,11 +60,11 @@ class App extends Component {
               component={Entertainment}
             />
             <ProtectedRoute exact path="/other" component={Other} />
+            <ProtectedRoute exact path="/addlocation" component={AddLocation} />
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/signup" component={SignUpPage} />
           </UserContext.Provider>
         </div>
-        <Chart/>
       </Router>
     );
   }
