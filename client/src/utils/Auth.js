@@ -16,13 +16,6 @@ function Auth() {
       });
   }
 
-  function signUp(username, password, cb) {
-    axios.post("/api/signUp", {
-      username: "Finn",
-      password: "Williams"
-    });
-  }
-
   function logOut() {
     localStorage.removeItem("token");
     loggedIn = false;

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
 import axios from "axios";
+import { withRouter } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 
 class AddLocation extends Component {
   state = {
@@ -21,6 +23,8 @@ class AddLocation extends Component {
   submitHandler = e => {
     e.preventDefault();
     axios.post("/api/addLocation", this.state);
+    //alert("Location created! Head back to the map to view your new marker!");
+    this.props.history.push("/all");
   };
 
   render() {
@@ -101,10 +105,13 @@ class AddLocation extends Component {
             />
             <button className="submit block">Submit</button>
           </form>
+          <Link to="/dashboard">
+            <button type="button">Click Me!</button>
+          </Link>
         </div>
       </div>
     );
   }
 }
 
-export default AddLocation;
+export default withRouter(AddLocation);
