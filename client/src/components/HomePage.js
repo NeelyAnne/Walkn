@@ -2,6 +2,7 @@ import React from "react";
 import UserContext from "../context/UserContext";
 import LogoutButton from "../components/LogoutButton";
 import Chart from "./Chart";
+import AddLocationButton from "./AddLocationButton";
 
 const HomePage = props => (
   <>
@@ -33,8 +34,9 @@ const HomePage = props => (
                     </li>
                   </ul>
                   <div className="navbar-text">
-                    {"---"}
-                    Welcome, {value.user && value.user.username}!{"---"}
+                    <AddLocationButton></AddLocationButton>
+                    {"|"}
+                    Welcome, {value.user && value.user.username}!{"|"}
                     <LogoutButton></LogoutButton>
                   </div>
                 </div>

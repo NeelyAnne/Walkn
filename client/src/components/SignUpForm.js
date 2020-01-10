@@ -11,6 +11,7 @@ class SignUpForm extends Component {
   changeHandler = e => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
+    console.log(this.state);
   };
 
   submitHandler = e => {
@@ -38,7 +39,7 @@ class SignUpForm extends Component {
           <p className="center1">Username:</p>
           <input
             type="text"
-            name="name"
+            name="username"
             className="formElement"
             onChange={this.changeHandler}
             value={this.state.username}
@@ -47,7 +48,7 @@ class SignUpForm extends Component {
           <p className="center1">Password:</p>
           <input
             type="text"
-            name="address"
+            name="password"
             className="formElement"
             onChange={this.changeHandler}
             value={this.state.password}

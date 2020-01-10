@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 import "./css/navbar.css";
 import { withRouter } from "react-router-dom";
+import AddLocationButton from "./AddLocationButton";
 
 class Navbar extends Component {
   clickMe = e => {
     e.preventDefault();
     this.props.history.push("/");
+  };
+
+  noClickMe = e => {
+    e.preventDefault();
+    this.props.history.push("/addlocation");
   };
 
   render() {
@@ -35,7 +41,8 @@ class Navbar extends Component {
                 </a>
               </li>
             </ul>
-            <span className="navbar-text">Return home to log out!</span>
+            <AddLocationButton></AddLocationButton>
+            <button onClick={this.clickMe}>Return HOME to logout!</button>
           </div>
         </nav>
       </div>

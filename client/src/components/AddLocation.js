@@ -22,7 +22,6 @@ class AddLocation extends Component {
   submitHandler = e => {
     e.preventDefault();
     axios.post("/api/addLocation", this.state);
-    //alert("Location created! Head back to the map to view your new marker!");
     this.props.history.push("/all");
   };
 

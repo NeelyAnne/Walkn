@@ -17,3 +17,8 @@
 .submit {
   margin: 20px;
 }
+
+.navbar-brand,
+button {
+  border: none;
+}
