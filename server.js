@@ -23,7 +23,7 @@ require("./routes/api-routes")(app);
 
 if (process.env.NODE_ENV === "production") {
   app.get("*", function(req, res) {
-    res.json(__dirname + "/client/build/index.html");
+    res.sendFile(__dirname + "/client/build/index.html");
   });
 }
 
