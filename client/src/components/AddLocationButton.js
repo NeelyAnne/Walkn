@@ -10,7 +10,9 @@ class AddLocationButton extends Component {
   render() {
     return (
       <>
-        <button onClick={this.noClickMe}>Add Location</button>
+        <button onClick={this.noClickMe} className="button">
+          Add Location
+        </button>
       </>
     );
   }

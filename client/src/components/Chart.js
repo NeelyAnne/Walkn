@@ -6,23 +6,12 @@ class Chart extends Component {
     super(props);
     this.state = {
       chartData: {
-        labels: [
-          "Brookhaven",
-          "Midtown",
-          "Decatur",
-          "Dunwoody",
-          "Buckhead",
-          "West Midtown",
-          "Edgewood"
-        ],
+        labels: ["Food", "Entertainment", "Recreation", "Other"],
         datasets: [
           {
             labal: "Pet-Friendly Places",
-            data: [20, 40, 100, 50, 10, 5, 60],
+            data: [20, 40, 100, 50],
             backgroundColor: [
-              "rbga(255,99, 132, 0.6)",
-              "rbga(255,99, 132, 0.6)",
-              "rbga(255,99, 132, 0.6)",
               "rbga(255,99, 132, 0.6)",
               "rbga(255,99, 132, 0.6)",
               "rbga(255,99, 132, 0.6)",
