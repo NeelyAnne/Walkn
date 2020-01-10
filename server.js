@@ -9,7 +9,9 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-mongoose.connect("mongodb://localhost/walkn", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/walkn", {
+  useNewUrlParser: true
+});
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
