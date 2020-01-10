@@ -26,7 +26,7 @@ class Chart extends Component {
         datasets: [
           {
             labal: "Pet-Friendly Places",
-            data: [20, 40, 100, 50],
+            data: [20, 40, 20, 40],
             backgroundColor: [
               "rbga(255,99, 132, 0.6)",
               "rbga(255,99, 132, 0.6)",
