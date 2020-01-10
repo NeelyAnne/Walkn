@@ -1,8 +1,8 @@
 import React from "react";
 import UserContext from "../context/UserContext";
 import LogoutButton from "../components/LogoutButton";
-import Chart from "./Chart";
-import AddLocationButton from "./AddLocationButton";
+import Jumbotron from "./Jumbotron";
+import Footer from "./Footer";
 
 const HomePage = props => (
   <>
@@ -34,9 +34,8 @@ const HomePage = props => (
                     </li>
                   </ul>
                   <div className="navbar-text">
-                    <AddLocationButton></AddLocationButton>
-                    {"|"}
-                    Welcome, {value.user && value.user.username}!{"|"}
+                    {"....."}
+                    Welcome, {value.user && value.user.username}!{"....."}
                     <LogoutButton></LogoutButton>
                   </div>
                 </div>
@@ -65,9 +64,8 @@ const HomePage = props => (
                 <br />
                 <br />
               </div>
-              <div className="jumbotron">
-                <Chart />
-              </div>
+              <Jumbotron></Jumbotron>
+              <Footer></Footer>
             </div>
           </>
         )}

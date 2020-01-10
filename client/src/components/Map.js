@@ -87,7 +87,6 @@ export class MapContainer extends Component {
               <h4>
                 {"Description: " + this.state.infoWindowContent.description}
               </h4>
-
             </div>
           </InfoWindow>
         </Map>
