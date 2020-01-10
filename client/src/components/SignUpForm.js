@@ -1,48 +1,64 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import axios from "axios";
 
 class SignUpForm extends Component {
+  state = {
+    username: "",
+    password: ""
+  };
+
+  changeHandler = e => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+    console.log(this.state);
+  };
+
+  submitHandler = e => {
+    e.preventDefault();
+    axios.post("/api/signup", this.state);
+    this.props.history.push("/");
+  };
+
+  clickMe = e => {
+    e.preventDefault();
+    this.props.history.push("/login");
+  };
+
   render() {
     return (
       <div className="signUpBody box">
-        <h1 className="center"> Please fill in the information below!</h1>
-        <form className="center" onSubmit={this.submitHandler}>
+        <h1 className="center">
+          {" "}
+          Welcome to Walkn, Atlanta's guide to a pet friendly lifestyle.
+        </h1>
+        <p className="center1">
+          If you're not already a member, sign up to gain access!
+        </p>
+        <form className="center1" onSubmit={this.submitHandler}>
+          <p className="center1">Username:</p>
           <input
             type="text"
-            name="name"
+            name="username"
             className="formElement"
-            placeholder="Name: "
+            onChange={this.changeHandler}
+            value={this.state.username}
           />
           <br />
+          <p className="center1">Password:</p>
           <input
             type="text"
-            name="address"
+            name="password"
             className="formElement"
-            placeholder="Address: "
+            onChange={this.changeHandler}
+            value={this.state.password}
           />
           <br />
-          <input
-            type="text"
-            name="description"
-            className="formElement"
-            placeholder="Description:"
-          />
-          <br />
-          <input
-            type="text"
-            name="lat"
-            className="formElement"
-            placeholder="Lat:"
-          />
-          <br />
-          <input
-            type="text"
-            name="long"
-            className="formElement"
-            placeholder="Long:"
-          />
-          <button className="submit block">Submit</button>
+          <button className="submit block center">Submit</button>
         </form>
+        <button className="center block" onClick={this.clickMe}>
+          Back to Login
+        </button>
       </div>
     );
   }

@@ -1,15 +1,26 @@
 import React, { Component } from "react";
 import "./css/navbar.css";
-import { BrowserRouter as Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+import AddLocationButton from "./AddLocationButton";
 
 class Navbar extends Component {
+  clickMe = e => {
+    e.preventDefault();
+    this.props.history.push("/");
+  };
+
+  noClickMe = e => {
+    e.preventDefault();
+    this.props.history.push("/addlocation");
+  };
+
   render() {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <Link to="/">
-            <a className="navbar-brand titleBar">Walkn</a>
-          </Link>
+          <button className="navbar-brand titleBar" onClick={this.clickMe}>
+            Walkn
+          </button>
           <button
             className="navbar-toggler"
             type="button"
@@ -30,7 +41,8 @@ class Navbar extends Component {
                 </a>
               </li>
             </ul>
-            <span className="navbar-text">Return home to log out!</span>
+            <AddLocationButton></AddLocationButton>
+            <button onClick={this.clickMe}>Return HOME to logout!</button>
           </div>
         </nav>
       </div>
@@ -38,4 +50,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+export default withRouter(Navbar);

@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import Auth from "../utils/Auth";
 import "./css/login.css";
-import { BrowserRouter as Link } from "react-router-dom";
 
 class LoginForm extends Component {
   static contextType = UserContext;
@@ -27,6 +26,11 @@ class LoginForm extends Component {
         this.props.history.push("/");
       });
     }
+  };
+
+  clickMe = e => {
+    e.preventDefault();
+    this.props.history.push("/signup");
   };
 
   render() {
@@ -56,9 +60,9 @@ class LoginForm extends Component {
         </form>
         <h1 className="center white">Not a member?</h1>
         <div className="center">
-          <Link to="/signup">
-            <button className="center block">Sign Up here!</button>
-          </Link>
+          <button className="center block" onClick={this.clickMe}>
+            Sign Up here!
+          </button>
         </div>
       </div>
     );

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
 import axios from "axios";
+import { withRouter } from "react-router-dom";
 
 class AddLocation extends Component {
   state = {
@@ -21,6 +22,7 @@ class AddLocation extends Component {
   submitHandler = e => {
     e.preventDefault();
     axios.post("/api/addLocation", this.state);
+    this.props.history.push("/all");
   };
 
   render() {
@@ -107,4 +109,4 @@ class AddLocation extends Component {
   }
 }
 
-export default AddLocation;
+export default withRouter(AddLocation);
