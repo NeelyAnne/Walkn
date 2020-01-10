@@ -93,7 +93,7 @@ module.exports = function(app) {
   });
 
   app.get("/api/recreation", function(req, res) {
-    Location.find({ category: "recreation" })
+    Location.count({ category: "recreation" })
       .then(function(dbLocation) {
         res.json(dbLocation);
       })
@@ -103,7 +103,7 @@ module.exports = function(app) {
   });
 
   app.get("/api/entertainment", function(req, res) {
-    Location.find({ category: "entertainment" })
+    Location.count({ category: "entertainment" })
       .then(function(dbLocation) {
         res.json(dbLocation);
       })
@@ -113,7 +113,7 @@ module.exports = function(app) {
   });
 
   app.get("/api/other", function(req, res) {
-    Location.find({ category: "other" })
+    Location.count({ category: "other" })
       .then(function(dbLocation) {
         res.json(dbLocation);
       })
