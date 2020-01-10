@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Navbar from "./Navbar";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-import { BrowserRouter as Link } from "react-router-dom";
 
 class AddLocation extends Component {
   state = {
@@ -105,9 +104,6 @@ class AddLocation extends Component {
             />
             <button className="submit block">Submit</button>
           </form>
-          <Link to="/dashboard">
-            <button type="button">Click Me!</button>
-          </Link>
         </div>
       </div>
     );

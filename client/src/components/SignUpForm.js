@@ -16,7 +16,12 @@ class SignUpForm extends Component {
   submitHandler = e => {
     e.preventDefault();
     axios.post("/api/signup", this.state);
-    alert("User added! Head back to the home page to view your new marker!");
+    this.props.history.push("/");
+  };
+
+  clickMe = e => {
+    e.preventDefault();
+    this.props.history.push("/login");
   };
 
   render() {
@@ -50,6 +55,9 @@ class SignUpForm extends Component {
           <br />
           <button className="submit block center">Submit</button>
         </form>
+        <button className="center block" onClick={this.clickMe}>
+          Back to Login
+        </button>
       </div>
     );
   }
