@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import Auth from "../utils/Auth";
 import "./css/login.css";
-import { BrowserRouter as Link } from "react-router-dom";
 
 class LoginForm extends Component {
   static contextType = UserContext;

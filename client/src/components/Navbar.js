@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 import "./css/navbar.css";
-import { BrowserRouter as Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class Navbar extends Component {
+  clickMe = e => {
+    e.preventDefault();
+    this.props.history.push("/");
+  };
+
   render() {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <Link to="/">
-            <a className="navbar-brand titleBar">Walkn</a>
-          </Link>
+          <button className="navbar-brand titleBar" onClick={this.clickMe}>
+            Walkn
+          </button>
           <button
             className="navbar-toggler"
             type="button"
@@ -38,4 +43,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+export default withRouter(Navbar);
