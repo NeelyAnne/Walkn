@@ -81,4 +81,44 @@ module.exports = function(app) {
         res.json(err);
       });
   });
+
+  app.get("/api/food", function(req, res) {
+    Location.count({ category: "food" })
+      .then(function(dbLocation) {
+        res.json(dbLocation);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
+  app.get("/api/recreation", function(req, res) {
+    Location.find({ category: "recreation" })
+      .then(function(dbLocation) {
+        res.json(dbLocation);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
+  app.get("/api/entertainment", function(req, res) {
+    Location.find({ category: "entertainment" })
+      .then(function(dbLocation) {
+        res.json(dbLocation);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
+  app.get("/api/other", function(req, res) {
+    Location.find({ category: "other" })
+      .then(function(dbLocation) {
+        res.json(dbLocation);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
 };

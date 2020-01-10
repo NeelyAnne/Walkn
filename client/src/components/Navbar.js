@@ -42,7 +42,9 @@ class Navbar extends Component {
               </li>
             </ul>
             <AddLocationButton></AddLocationButton>
-            <button onClick={this.clickMe}>Return HOME to logout!</button>
+            <button onClick={this.clickMe} className="button1">
+              Return HOME to logout!
+            </button>
           </div>
         </nav>
       </div>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import "./css/jumbotron.css";
 
 class AddLocationButton extends Component {
   noClickMe = e => {
@@ -10,7 +11,7 @@ class AddLocationButton extends Component {
   render() {
     return (
       <>
-        <button onClick={this.noClickMe} className="button">
+        <button onClick={this.noClickMe} className="button1">
           Add Location
         </button>
       </>

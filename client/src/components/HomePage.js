@@ -2,6 +2,7 @@ import React from "react";
 import UserContext from "../context/UserContext";
 import LogoutButton from "../components/LogoutButton";
 import Jumbotron from "./Jumbotron";
+import Footer from "./Footer";
 
 const HomePage = props => (
   <>
@@ -64,6 +65,7 @@ const HomePage = props => (
                 <br />
               </div>
               <Jumbotron></Jumbotron>
+              <Footer></Footer>
             </div>
           </>
         )}
