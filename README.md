@@ -21,10 +21,9 @@ MongoDB/Mongoose
 React.js
 Axios-node module
 
-Our database consists of 4 models/collections:
+Our database consists of 2 models/collections:
 
-User
-Locations
+Users and Locations
 
 Challenges
 
